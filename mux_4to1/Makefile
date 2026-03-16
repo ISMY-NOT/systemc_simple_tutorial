@@ -19,8 +19,8 @@
 
 # 编译器和标志
 CXX = g++
-CXXFLAGS = -std=c++17 -Wall -I/usr/include
-LDFLAGS = -L/usr/lib -lsystemc -pthread -Wl,-rpath,/usr/lib
+CXXFLAGS = -std=c++17 -Wall -I/usr/local/systemc/include
+LDFLAGS = -L/usr/local/systemc/lib -lsystemc -pthread -Wl,-rpath,/usr/local/systemc/lib
 
 # 构建目录（由上级Makefile传入）
 BUILD_DIR ?= $(CURDIR)/../build/mux_4to1
