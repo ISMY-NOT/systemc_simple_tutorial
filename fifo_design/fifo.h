@@ -108,9 +108,9 @@ SC_MODULE(fifo) {
         sensitive << clk.pos();
         
         // 初始状态
-        full.initialize(false);
-        empty.initialize(true);
-        size.initialize(0);
+        // full.initialize(false);
+        // empty.initialize(true);
+        // size.initialize(0);
     }
 };
 
