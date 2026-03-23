@@ -20,5 +20,6 @@ mux_4to1_tb
 # 编辑器临时文件
 .vscode/
 .idea/
+cpp_test/
 *.swp
 *~
