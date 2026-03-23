@@ -1,4 +1,4 @@
-# Makefile for mux_4to1 design
+# Makefile for mux_8to1 design
 # Copyright (C) 2025  ZhaoCake
 
 # This program is free software: you can redistribute it and/or modify
@@ -15,7 +15,7 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 
-# 2位4选1选择器 Makefile
+# 2位8选1选择器 Makefile
 
 # 编译器和标志
 CXX = g++
@@ -23,13 +23,13 @@ CXXFLAGS = -std=c++17 -Wall -I/usr/local/systemc/include
 LDFLAGS = -L/usr/local/systemc/lib -lsystemc -pthread -Wl,-rpath,/usr/local/systemc/lib
 
 # 构建目录（由上级Makefile传入）
-BUILD_DIR ?= $(CURDIR)/../build/mux_4to1_exam
+BUILD_DIR ?= $(CURDIR)/../build/mux_8to1_exam
 
 # 目标可执行文件
-TARGET = $(BUILD_DIR)/mux_4to1_exam_tb
+TARGET = $(BUILD_DIR)/mux_8to1_exam_tb
 
 # 源文件和目标文件
-SRCS = mux_4to1_exam_tb.cpp
+SRCS = mux_8to1_exam_tb.cpp
 OBJS = $(patsubst %.cpp,$(BUILD_DIR)/%.o,$(SRCS))
 
 # 默认目标

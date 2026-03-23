@@ -14,19 +14,23 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-#ifndef MUX_4TO1_EXAM_H
-#define MUX_4TO1_EXAM_H
+#ifndef MUX_8TO1_EXAM_H
+#define MUX_8TO1_EXAM_H
 
 #include <systemc.h>
 
-SC_MODULE(mux_4to1_exam) {
+SC_MODULE(mux_8to1_exam) {
     // 输入端口
     sc_in<sc_uint<4>> X0;    // 4位输入0
     sc_in<sc_uint<4>> X1;    // 4位输入1
     sc_in<sc_uint<4>> X2;    // 4位输入2
     sc_in<sc_uint<4>> X3;    // 4位输入3
+    sc_in<sc_uint<4>> X4;    // 4位输入4
+    sc_in<sc_uint<4>> X5;    // 4位输入5
+    sc_in<sc_uint<4>> X6;    // 4位输入6
+    sc_in<sc_uint<4>> X7;    // 4位输入7
     sc_in<bool> EN;          // 使能信号
-    sc_in<sc_uint<4>> Y; // 4位选择输入
+    sc_in<sc_uint<3>> Y; // 8位选择输入
 
     // 输出端口
     sc_out<sc_uint<4>> F;    // 4位输出
@@ -47,6 +51,14 @@ SC_MODULE(mux_4to1_exam) {
                 F.write(X2.read());
             else if(Y.read()==3)
                 F.write(X3.read());
+            else if(Y.read()==4)
+                F.write(X4.read());
+            else if(Y.read()==5)
+                F.write(X5.read());
+            else if(Y.read()==6)
+                F.write(X6.read());
+            else if(Y.read()==7)
+                F.write(X7.read());
             else
                 F.write(0);
         } else {
@@ -55,11 +67,11 @@ SC_MODULE(mux_4to1_exam) {
     }
     
     // 构造函数
-    SC_CTOR(mux_4to1_exam) {
+    SC_CTOR(mux_8to1_exam) {
         // 注册进程
         SC_METHOD(mux_process);
-        sensitive << X0 << X1 << X2 << X3 << Y << EN;  // 对所有输入敏感
+        sensitive << X0 << X1 << X2 << X3 << X4 << X5 << X6 << X7 << Y << EN;  // 对所有输入敏感
     }
 };
 
-#endif // MUX_4TO1_EXAM_H
+#endif // MUX_8TO1_EXAM_H
