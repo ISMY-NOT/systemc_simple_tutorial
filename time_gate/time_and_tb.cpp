@@ -79,6 +79,8 @@ SC_MODULE(time_and_tb){
         SC_THREAD(test_process);
 
         tf = sc_create_vcd_trace_file("time_and");
+        tf->set_time_unit(1, SC_NS);
+
         sc_trace(tf, clk, "clk");
         sc_trace(tf, rst_n, "rst_n");
         sc_trace(tf, A, "A");

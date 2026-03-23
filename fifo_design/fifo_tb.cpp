@@ -15,7 +15,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 #include <systemc.h>
-#include <iomanip>
+// #include <iomanip>
 #include <queue>
 #include <random>
 #include "fifo.h"
