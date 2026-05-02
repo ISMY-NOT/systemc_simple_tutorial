@@ -1,4 +1,4 @@
-# Makefile for 4-bit signed two's complement ALU
+# Makefile for FIFO design
 # Copyright (C) 2025  ZhaoCake
 
 # This program is free software: you can redistribute it and/or modify
@@ -14,7 +14,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-# 4位带符号补码ALU Makefile
+# FIFO设计 Makefile
 
 # 编译器和标志
 CXX = g++
@@ -22,13 +22,13 @@ CXXFLAGS = -std=c++17 -Wall -I/usr/local/systemc/include
 LDFLAGS = -L/usr/local/systemc/lib -lsystemc -pthread -Wl,-rpath,/usr/local/systemc/lib
 
 # 构建目录（由上级Makefile传入）
-BUILD_DIR ?= $(CURDIR)/../build/alu_8bit_exam
+BUILD_DIR ?= $(CURDIR)/../build/fifo_design
 
 # 目标可执行文件
-TARGET = $(BUILD_DIR)/alu_8bit_exam_tb
+TARGET = $(BUILD_DIR)/fifo_tb
 
 # 源文件和目标文件
-SRCS = alu_8bit_exam.cpp alu_8bit_exam_tb.cpp    # 此处把所有需要编译的文件都加入
+SRCS = fifo_tb.cpp
 OBJS = $(patsubst %.cpp,$(BUILD_DIR)/%.o,$(SRCS))
 
 # 默认目标
